@@ -5,7 +5,9 @@
 		<h2 class="title"> <%= link_to post.title, post %></h2>
 		<p> By <%= post.user.email %></p>
 		<p > <%= post.body.slice(0..50) %></p>
-		<p><%= image_tag post.image.url(:thumb) %></p>
+		<% if !post.image_file_name.blank? %>
+			<p><%= image_tag post.image.url(:thumb) %></p>
+		<% end %>
 		<p class="date"> <%= time_ago_in_words(post.created_at) %> ago </p>
 	</div>
 <% end %>

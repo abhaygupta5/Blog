@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 	before_action :find_doc, only: [:update, :show, :destroy, :edit]
-
+	
 	def index
 		#@posts=Post.where(user_id: current_user).order("created_at DESC")
 		@posts=Post.all.order("created_at DESC")
@@ -24,10 +24,21 @@ class PostsController < ApplicationController
 	end
 
 	def update
-		if @post.update(post_params)
-			redirect_to @post
+		if params[:image].blank?
+			@post.image=nil
+			@post.save
+			if @post.update(post_params)
+				redirect_to @post
+			else
+				render 'edit'
+			end
+
 		else
-			render 'edit'
+			if @post.update(post_params)
+				redirect_to @post
+			else
+				render 'edit'
+			end
 		end
 	end
 
@@ -48,7 +59,6 @@ class PostsController < ApplicationController
 			params.require(:post).permit(:title,:body,:image)
 		end
 
-
-
+		
 
 end

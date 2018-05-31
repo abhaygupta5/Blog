@@ -1,7 +1,4 @@
-<div id="page_wrapper">
-	<h1>Make Something</h1>
-
-	<%= form_for :post, url: posts_path do |f| %>
+<%= form_for @post do |f| %>
 		<% if @post.errors.any? %>
 			<div id="errors">
 				<h2><%= pluralize(@post.errors.count, "error") %> stopped this post from saving</h2> 
@@ -32,7 +29,14 @@
 		</p>
 
 		<p>
+			<% if !@post.image_file_name.blank? %>
+				<%= image_tag @post.image.url(:thumb) %>
+			<% end %>
+
+		</p>
+
+		<p>
 			<%= f.submit %>
 		</p>
-	<% end %>
-</div>
+<% end %>
+

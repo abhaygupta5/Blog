@@ -1,7 +1,7 @@
 <div id="post_content">
 	<% if user_signed_in? && @post.user_id== current_user.id %>
-		<p class="button"><%= link_to "Update", edit_post_path(@post) %></p>
-		<p class="button"><%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure you want to delete? "} %></p>
+		<%= link_to "Update", edit_post_path(@post), class: "button" %>
+		<%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure you want to delete? "}, class: "button" %>
 	<% end %>
 	<h1 class="title">
 		<%= @post.title %>

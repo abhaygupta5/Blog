@@ -30,7 +30,7 @@ a {
 }
 
 #sidebar {
-	width: 200px;
+	width: 250px;
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -43,15 +43,16 @@ a {
 		list-style: none;
 		text-align: right;
 		padding-right: 3em;
-		.category {
+		.category a{
 			font-weight: 900;
-			font-size: 2.5em;
+			font-size: 35px;
 			text-transform: uppercase;
 			color: #22747b;
 		}
 		li {
 			padding: .45em 0;
 			a {
+				font-size: 25px;
 				color: #FFF;
 				text-decoration: none;
 				transition: all .4s ease;
@@ -76,11 +77,13 @@ a {
 }
 
 .button {
-	outline: none;
+	
 	background: transparent;
-	border: 1.5px solid #FFF;
+	border: 1.5px solid #000;
 	padding: .5em 2.5em;
 	border-radius: 0.5em;
+	font-size: 15px;
+	font-weight: bold;
 	&:hover {
 		border: 1px solid #333734;
 		color: #22487b;
@@ -99,7 +102,7 @@ a {
 }
 
 #main_content {
-	margin-left: 200px;
+	margin-left: 250px;
 	#header {
 		padding: 1.2em 3.5em;
 		border-bottom: 1px solid #b8e2fe;
@@ -107,6 +110,7 @@ a {
 		color: #FFF;
 		p {
 			display: inline;
+			font-size: 25px;
 		}
 		a {
 			color: #FFF;
@@ -114,7 +118,7 @@ a {
 		}
 		.buttons {
 			float: right;
-			margin-top: -6px;
+			margin-top: 0px;
 			.button {
 				font-size: .8em;
 				margin-left: .5em;
@@ -155,7 +159,7 @@ a {
 			margin-bottom: 0;
 		}
 		.body {
-			font-size: 1.1em;
+			font-size: 25px;
 			line-height: 1.75;
 		}
 		.date_and_author {
@@ -170,6 +174,10 @@ a {
 			}
 			h3 {
 				margin-top: 2em;
+			}
+			p label{
+				font-size: 25px;
+				font-weight:bold;
 			}
 			.comment {
 				border-bottom: 1px solid #d6dce0;

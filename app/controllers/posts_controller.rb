@@ -94,6 +94,10 @@ class PostsController < ApplicationController
 		@posts= Post.where(category: "other").all.order("updated_at DESC")		
 	end
 
+	def myposts
+		@posts= Post.where(user_id: current_user.id).all.order("updated_at DESC")
+	end
+
 
 	private
 		def find_doc

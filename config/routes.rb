@@ -24,6 +24,6 @@ Rails.application.routes.draw do
   get '/product', to: 'posts#product'
   get '/other', to: 'posts#other'
 
-  
+  get '/myposts', to: 'posts#myposts'
   
 end

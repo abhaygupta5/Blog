@@ -1,7 +1,7 @@
 <div id="page_wrapper">
 	<h1>Make Something</h1>
 
-	<%= form_for :post, url: posts_path do |f| %>
+	<%= simple_form_for :post, url: posts_path do |f| %>
 		<% if @post.errors.any? %>
 			<div id="errors">
 				<h2><%= pluralize(@post.errors.count, "error") %> stopped this post from saving</h2> 
@@ -32,7 +32,7 @@
 
 		<p>
 			<%= f.label :image %><br>
-			<%= f.file_field :image %>
+			<%= f.file_field :image, required: false %>
 		</p>
 
 		<p>

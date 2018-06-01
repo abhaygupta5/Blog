@@ -17,9 +17,9 @@
 		Submitted <%= time_ago_in_words(@post.created_at) %> ago
 	</p>
 
-	<p class="body">
-		<%= @post.body %>
-	</p>
+	<h3 id="body">
+		<%= simple_format(@post.body) %>
+	</h3>
 
 	<p class="image">
 	<% if !@post.image_file_name.blank? %>

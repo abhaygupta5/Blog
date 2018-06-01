@@ -5,19 +5,42 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-  
-    <%= f.input :name, required: true, autofocus: true %>
-    <%= f.input :email, required: true %>
+    <table style="width:100%">
+    <tr>
+    <td style="width:25%;"><%= f.label :name, class: "labelclass" %></td>
+    <td><%= f.text_field :name, required: true, autofocus: true %></td></tr>
+    <tr><td><%= f.label :email, class: "labelclass" %></td>
+    <td><%= f.email_field :email, required: true %></td>
+    </tr>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p >Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
-
-    <%= f.input :password, autocomplete: "off", required: false %>
-    <p style="margin-left: 5%;">leave it blank if you don't want to change it</p>
-    <%= f.input :password_confirmation, required: false %>
-    <%= f.input :current_password, required: true %>
-    <p style="margin-left: 5%;">we need your current password to confirm your changes</p>
+    <tr>
+    <td><%= f.label :password, class: "labelclass" %></td>
+    <td><%= f.password_field :password, autocomplete: "off", required: false %></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td>
+    <p>Leave it blank if you don't want to change it</p>
+    </td>
+    </tr>
+    <tr>
+    <td><%= f.label :password_confirmation, class: "labelclass" %></td>
+    <td><%= f.password_field :password_confirmation, required: false %></td>
+    </tr>
+    <tr>
+    <td><%= f.label :current_password, class: "labelclass" %></td>
+    <td><%= f.password_field :current_password, required: true %></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td>
+    <p>We need your current password to confirm your changes</p>
+    </td>
+    </tr>
+    </table>
   </div>
 
   <div class="form-actions">

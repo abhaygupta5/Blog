@@ -13,8 +13,20 @@
     <div id="sidebar">
       <ul>
         <li class="category"><%= link_to "Blog", root_path %></li>
-        <li><%= link_to "Posts", root_path %></li>
-        <li><%= link_to "About", about_path %></li>
+        <li id="sidebutton"> Categories </li>
+        <li><%= link_to "Science and Technology", tech_path %></li>
+        <li><%= link_to "Educational", education_path %></li>
+        <li><%= link_to "Cultural", culture_path %></li>
+        <li><%= link_to "Personality Development", personalityDevelopment_path %></li>
+        <li><%= link_to "Entertainment", entertainment_path %></li>
+        <li><%= link_to "Politics", politics_path %></li>
+        <li><%= link_to "Sports", sports_path %></li>
+        <li><%= link_to "Programming", programming_path %></li>
+        <li><%= link_to "Products", product_path %></li>
+        <li><%= link_to "Other", other_path %></li>
+
+        <li id="sidebutton2"><%= link_to "All Posts", root_path %></li>
+        <li id="sidebutton3"><%= link_to "About", about_path %></li>
       </ul>
 
       

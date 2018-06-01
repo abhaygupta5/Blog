@@ -1,10 +1,9 @@
 <div id="page_wrapper">
 <%= form_tag(posts_path, method: :get) do %>
-	
 	<%= text_field_tag :term, params[:term] %>
 	<%= submit_tag 'Search' %>
 <% end %>
-<h1>Posts</h1>
+<h1>Product Posts</h1>
 
 <% @posts.each do |post| %>
 	<div class="post_wrapper">

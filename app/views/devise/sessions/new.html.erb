@@ -1,16 +1,23 @@
-<div id="page_wrapper">
+<div class="wrapper_with_padding">
 <h2>Log in</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
+  <table style="width:100%">
+    <tr>
+    <td><%= f.label :email, class: "labelclass" %></td>
+    <td><%= f.email_field :email, required: false, autofocus: true %></td></tr>
+    <tr>
+    <td><%= f.label :password, class: "labelclass" %></td>
+    <td><%= f.password_field :password, required: false %></td>
+    </tr>
+    </table>
     <br>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
   <br>
   <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+    <%= f.button :submit, "Log in", class: "button" %>
   </div>
 <% end %>
 <br><br>

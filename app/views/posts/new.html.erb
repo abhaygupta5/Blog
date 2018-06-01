@@ -17,6 +17,10 @@
 
 		<% end %>
 		<p>
+			<%= f.label :category %><br>
+			<%= f.select :category, [ ['Science and Technology','tech'], ['Programming','prog'], ['Culture','culture'],['Education','edu'],['Personality Development','pd'],['Sports'],['Entertainment'],['Product'],['Politics'], 'Other' ], :prompt => 'Select One Category of your post', :class => 'genForm_dropBox' %>
+		</p>
+		<p>
 			<%= f.label :title %><br>
 			<%= f.text_field :title %>
 		</p>

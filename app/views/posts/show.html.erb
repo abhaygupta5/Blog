@@ -27,6 +27,7 @@
 	
 	<h2 class="section-heading" >
 		<%= @post.title %>
+		
 	</h2>
 	<h2 style="margin-left:12%">
 		By <%= @post.user.name %>
@@ -48,7 +49,9 @@
 	<div id="comments">
 		<h2><%= @post.comments.count %> Comments</h2>
 		<%= render @post.comments %>
-		<%= render "comments/form" %>
+		<% if !current_user.blank? %>
+			<%= render "comments/form" %>
+		<% end %>
 	</div>
 
 	

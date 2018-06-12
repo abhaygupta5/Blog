@@ -1,15 +1,33 @@
-<div id="post_content">
+<header class="masthead" <% if !@post.image_file_name.blank? %> style="background: url(<%= @post.image.url %>)" <% end %>>
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1><%= @post.title %></h1>
+              <h2 class="subheading"><%= @post.body.slice(0..50) %></h2>
+              <span class="meta">Posted by
+                <%= @post.user.name %>
+                on <%= @post.created_at.strftime("%B, %d %Y") %></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+<div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
 	<div style="margin-top: 3%;margin-bottom: 3%;">
 	<% if user_signed_in? && @post.user_id== current_user.id %>
-		<%= link_to "Update", edit_post_path(@post), class: "button" %>
-		<%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure you want to delete? "}, class: "button" %>
+		<%= link_to "Update", edit_post_path(@post), class: "btn btn-primary" %>
+		<%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure you want to delete? "}, class: "btn btn-primary" %>
 	<% end %>
 	</div>
 	
 	
-	<h1 class="title" >
+	<h2 class="section-heading" >
 		<%= @post.title %>
-	</h1>
+	</h2>
 	<h2 style="margin-left:12%">
 		By <%= @post.user.name %>
 	</h2>
@@ -23,13 +41,14 @@
 
 	<p class="image">
 	<% if !@post.image_file_name.blank? %>
-		<%= image_tag @post.image.url(:medium) %>
+		<%= image_tag(@post.image.url(:medium), class: "img-fluid") %>
 	<% end %>
 	</p>
-
+	<hr style="margin-bottom: 5%;">
 	<div id="comments">
 		<h2><%= @post.comments.count %> Comments</h2>
 		<%= render @post.comments %>
 		<%= render "comments/form" %>
 	</div>
-</div>
+
+	

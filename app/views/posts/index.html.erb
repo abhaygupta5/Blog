@@ -1,20 +1,49 @@
-<div id="page_wrapper">
-<%= form_tag(posts_path, method: :get) do %>
-	
-	<%= text_field_tag :term, params[:term] %>
-	<%= submit_tag 'Search' %>
-<% end %>
-<h1>Posts</h1>
+<header class="masthead" style="background: url(<%= image_path('home.png') %>)">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div style="position: absolute; top: 16%; left: 30%;" id="search-div">
+              <table>
+                <tr>
+            <%= form_tag(posts_path, method: :get) do %>
+              
+              <td style="padding:0;margin:0"><%= text_field_tag :term, params[:term], placeholder: "Search for...", class: "form-control search" %></td>
+              <td style="padding:0;margin:0"><%= submit_tag 'Go', class: "btn search-label" %></td>
+            <% end %>
+            </tr>
+            </table>
+            </div>
+            <div class="site-heading">
+              <h1>Your Board</h1>
+              <span class="subheading">Where you can learn a lot</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+<div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
 
 <% @posts.each do |post| %>
-	<div class="post_wrapper">
-		<h2 class="title"> <%= link_to post.title, post %></h2>
+	<div class="post-preview">
+		<h2 class="post-title"> <%= link_to post.title, post %></h2>
 		
-		<p > <%= post.body.slice(0..50) %></p>
+		<h3 class="post-subtitle" > <%= post.body.slice(0..50) %></h3>
 		<% if !post.image_file_name.blank? %>
 			<p><%= image_tag post.image.url(:thumb) %></p>
 		<% end %>
-		<p class="date"> <%= time_ago_in_words(post.created_at) %> ago </p>
+		<p class="post-meta"> <%= time_ago_in_words(post.created_at) %> ago </p>
 	</div>
+	<hr>
 <% end %>
+<!-- Pager -->
+          
+            
+<div id="outer" style="width:100%">         
+<div id="inner" >
+	<%= will_paginate @posts,:page_links => false,:previous_label=>"Previous", :next_label=>"Next" %>
+</div>
 </div>

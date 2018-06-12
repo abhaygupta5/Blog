@@ -1,4 +1,4 @@
-<%= simple_form_for @post do |f| %>
+<%= form_for @post do |f| %>
 		<% if @post.errors.any? %>
 			<div id="errors">
 				<h2><%= pluralize(@post.errors.count, "error") %> stopped this post from saving</h2> 
@@ -15,7 +15,7 @@
 		<% end %>
 		<p>
 			<%= f.label :category %><br>
-			<%= f.select :category, [ ['Science and Technology','tech'], ['Programming','prog'], ['Culture','culture'],['Education','edu'],['Personality Development','pd'],['Sports'],['Entertainment'],['Product'],['Politics'], 'Other' ], :prompt => 'Select One Category of your post', :class => 'genForm_dropBox' %>
+			<%= f.select :category, [ ['Science and Technology','tech'], ['Programming','prog'], ['Culture','culture'],['Sports'],['Entertainment'],['Product'],['Politics'], 'Other' ], :prompt => 'Select One Category of your post', :class => 'genForm_dropBox', class: "btn btn-primary" %>
 		</p>
 		<p>
 			<%= f.label :title %><br>
@@ -29,7 +29,7 @@
 
 		<p>
 			<%= f.label :image %><br>
-			<%= f.file_field :image %>
+			<%= f.file_field :image, class: "btn" %>
 		</p>
 
 		<p>
@@ -40,7 +40,7 @@
 		</p>
 
 		<p>
-			<%= f.submit %>
+			<%= f.submit class: "btn btn-primary" %>
 		</p>
 <% end %>
 

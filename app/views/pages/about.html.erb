@@ -1,9 +1,24 @@
-<div id="page_wrapper">
+<header class="masthead" style="background: url(<%= image_path('about.jpg') %>)">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>About Me</h1>
+              <span class="subheading">I'm Abhay and I am a programmer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+<div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
 	<div id="profile_image">
-		<%= image_tag "my_image.jpg" %>
+		<%= image_tag("my_image.jpg", class: "img-fluid") %>
 	</div>
 	<div id="content">
 		<h1>This is a Blog Website</h1>
-		<p>My name is <strong>Abhay Gupta</strong> and I created this blog website so that everyone can share there knowlege across the social platform and take reviews from the public in a nice and quicker way. </p>
+		<p>My name is <strong>Abhay Gupta</strong> and I created this blog website so that everyone can share their knowledge across the social platform and take reviews from the public in a nice and quicker way. </p>
 	</div>
-</div>

@@ -1,7 +1,22 @@
-<div id="page_wrapper">
+<header class="masthead" style="background: url(<%= image_path('home.png') %>)">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Edit your Post</h1>
+              <span class="subheading">Just clean up your post</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+<div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
 	<h1>Edit It</h1>
 	<%= render 'form' %>
-	<%= link_to "Cancel", post_path, class: "button" %>
-</div>
+	<%= link_to "Cancel", post_path, class: "btn btn-primary" %>
+
 	
 	

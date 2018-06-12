@@ -10,30 +10,77 @@
   </head>
 
   <body>
-    <div id="sidebar">
-      <ul>
-        <li class="category"><%= link_to "Your Board", root_path %></li>
-        <li id="sidebutton"> Categories </li>
-        <li><%= link_to "Science and Technology", tech_path %></li>
-        <li><%= link_to "Educational", education_path %></li>
-        <li><%= link_to "Cultural", culture_path %></li>
-        <li><%= link_to "Personality Development", personalityDevelopment_path %></li>
-        <li><%= link_to "Entertainment", entertainment_path %></li>
-        <li><%= link_to "Politics", politics_path %></li>
-        <li><%= link_to "Sports", sports_path %></li>
-        <li><%= link_to "Programming", programming_path %></li>
-        <li><%= link_to "Products", product_path %></li>
-        <li><%= link_to "Other", other_path %></li>
 
-        <li id="sidebutton2"><%= link_to "All Posts", root_path %></li>
-        <li id="sidebutton3"><%= link_to "About", about_path %></li>
-      </ul>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <%= link_to "Your Board",root_path, class: "navbar-brand" %>
+        
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            
+            
+            <li class="nav-item">
+              <div class="dropdown">
+                <button class="dropbtn">CATEGORIES</button>
+                <div class="dropdown-content">
+                  <%= link_to "Science and Technology", tech_path %>
+        
+                  <%= link_to "Cultural", culture_path %>
+                  
+                  <%= link_to "Entertainment", entertainment_path %>
+                  <%= link_to "Politics", politics_path %>
+                  <%= link_to "Sports", sports_path %>
+                  <%= link_to "Programming", programming_path %>
+                  <%= link_to "Products", product_path %>
+                  <%= link_to "Other", other_path %>
+                </div>
+              </div> 
+            </li>
+            <li class="nav-item">
+              <%= link_to "About", about_path %>
+            </li>
+            
+            <% if user_signed_in? %>
+              <li class="nav-item"> <%= link_to "My Posts", myposts_path %></li>
+              <li class="nav-item"> <%= link_to "Make Post", new_post_path %></li>
+              <li class="nav-item"> <%= link_to "Edit Account", edit_user_registration_path %></li>
+              <li class="nav-item"><%= link_to "Log Out",destroy_user_session_path, method: :delete %> </li>
+            <% else %>
+              <li class="nav-item"><%= link_to "Login", new_user_session_path %> </li>
+              <li class="nav-item"><%= link_to "Sign Up", new_user_registration_path %> </li>
+            <% end %>
 
-      
+
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    
+
+
+    
+
+    <!-- Main Content -->
+    
+          
+          <%= yield %>
+          
+        </div>
+      </div>
     </div>
 
-    <div id="main_content">
-      <div id="header">
+    <hr>
+
+    
+      <!--<div id="header">
       <% if current_page?(root_path) %>
         <p>Post Feed </p>
       <% elsif current_page?(about_path) %>
@@ -41,27 +88,61 @@
       <% else %>
         <p>You are reading a post</p>
       <% end %>
-        <div class="buttons">
-          <% if user_signed_in? %>
-            <p class="button"> <%= link_to "My Posts", myposts_path %></p>
-            <p class="button"> <%= link_to "Make Post", new_post_path %></p>
-            <p class="button"> <%= link_to "Edit Account", edit_user_registration_path %></p>
-            <p class="button"><%= link_to "Log Out",destroy_user_session_path, method: :delete %> </p>
-          <% else %>
-            <p class="button"><%= link_to "Login", new_user_session_path %> </p>
-            <p class="button"><%= link_to "Sign Up", new_user_registration_path %> </p>
-          <% end %>
-        </div>
-      </div>
+        
+      </div>-->
 
       <!-- for displaying errors and messages
       <% flash.each do |name,msg| %>
         <%= content_tag(:div,msg,class: "alert") %>
       <% end %>
       -->
-      <%= yield %>
-    </div>
+      
+    
 
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Copyright &copy; Your Board 2018</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  <!-- Bootstrap core JavaScript -->
+    
+    <%= javascript_include_tag "jquery.min" %>
+    <%= javascript_include_tag "bootstrap.bundle.min" %>
+
+    <!-- Custom scripts for this template -->
+    <%= javascript_include_tag "clean-blog.min" %>
+    
     
   </body>
 </html>

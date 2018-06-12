@@ -1,0 +1,281 @@
+
+
+
+@import "bootstrap";
+@import 'normalize';
+@import "variables.scss";
+@import "mixins.scss";
+@import "global.scss";
+@import "navbar.scss";
+@import "masthead.scss";
+@import "post.scss";
+@import "contact.scss";
+@import "footer.scss";
+@import "bootstrap-overrides.scss";
+
+html, body {
+	font-family: 'PT Sans Narrow', sans-serif;
+}
+
+
+
+#body{
+	font-size: 25px;
+	font-weight: 100;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 600;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+#inner {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.pagination {
+  .previous_page {  
+  					padding: 14px 24px;
+				    border: 0 none;
+				    font-weight: 700;
+				    letter-spacing: 1px;
+				    text-transform: uppercase;
+				    margin-right: 5%;
+				    background: #0099cc;
+    				color: #ffffff;
+				    			    
+				    }
+				    
+  .previous_page.disabled { background: white; color: #777; margin-right: 5% ;
+  letter-spacing: 1px;
+    text-transform: uppercase;
+    	 }
+  
+  .next_page {  padding: 14px 24px;
+				border: 0 none;
+				font-weight: 700;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				background: #0099cc;
+    			color: #ffffff;
+				}
+  .next_page.disabled { background: white; color: #777;
+  letter-spacing: 1px;
+    text-transform: uppercase; }
+}
+
+
+
+/* Style The Dropdown Button */
+.dropbtn {
+    
+    color: white;
+    background-color: transparent;
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+
+}
+
+@media only screen and (max-width: 992px) {
+	.dropbtn{
+    	color: black;
+	}
+    }
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ededed;
+    min-width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.search{
+	width: 100%;
+	border-radius: 0;
+	
+}
+.search-label{
+	width: 100%;
+	height: 38px;
+	padding: 5px;
+	
+}
+
+.search-label:hover{
+	background-color: blue;
+	color: white;
+}
+
+@media only screen and (max-width: 768px){
+	#search-div{
+	width: 50%;
+	
+	
+}
+}
+
+
+.wrapper_with_padding {
+	width: 80%;
+	margin: 0 auto;
+	padding: 3.5rem 0;
+}
+
+
+
+.button {
+	
+	background: transparent;
+	border: 1.5px solid #000;
+	padding: .5em 2.5em;
+	border-radius: 0.5em;
+	font-size: 15px;
+	font-weight: bold;
+	&:hover {
+		border: 1px solid #333734;
+		color: #22487b;
+		a {
+			color: #22487b !important;
+		}
+	}
+}
+
+.clearfix:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+
+		.title {
+			font-weight: 500;
+			text-decoration: none;
+			color: #529FCD;
+			font-size: 2.5em;
+			margin-bottom: 0;
+		}
+		.body {
+			font-size: 25px;
+			line-height: 1.75;
+		}
+		.date_and_author {
+			color: #9eafba;
+			margin: .5em 0 2em 0;
+		}
+		#comments {
+			h2 {
+				margin: 3em 0 1em 0;
+				border-bottom: 1px solid #d6dce0;
+				padding-bottom: 0.5em;
+			}
+			h3 {
+				margin-top: 2em;
+			}
+			p label{
+				font-size: 25px;
+				font-weight:bold;
+			}
+			.comment {
+
+				border-bottom: 1px solid #d6dce0;
+				padding: 1.5em 2em;
+				.clear_both {
+					clear: both;
+				}
+				&:after {
+					clear: both;
+				}
+				.comment_content {
+					float: left;
+					.comment_name {
+						margin: 1em 0 0 0;
+						font-size: 1.0em;
+						text-transform: uppercase;
+					}
+					.comment_body {
+						font-size: 1.2em;
+						margin: 0.2em 0 0 0;
+					}
+					.comment_time {
+						margin-top: 1.2em;
+						font-size: .4em;
+					}
+				}
+				.button {
+					float: right;
+				}
+			}
+			input[type="text"], textarea {
+				width: 100%;
+			}
+		}
+	
+	
+	.links {
+		margin: 2em 0;
+	}
+
+
+
+	input, textarea {
+		width: 100%;
+		border: 1px solid #d6dce0;
+		border-radius: .35em;
+		margin-top: 20px;
+		padding: .5em 1em;
+		line-height: 1.75;
+	}
+	
+	textarea {
+		min-height: 180px;
+	}
+	.remember{
+		float: left;
+
+	}
+	.remember1{
+		width: 10%;
+	}
+
+
+.labelclass{
+	font-size: 20px;
+}

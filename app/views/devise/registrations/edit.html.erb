@@ -1,4 +1,19 @@
-<div id="page_wrapper">
+<header class="masthead" style="background: url(<%= image_path('home.png') %>)">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Edit Your Account</h1>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+<div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -7,8 +22,8 @@
   <div class="form-inputs">
     <table style="width:100%">
     <tr>
-    <td style="width:25%;"><%= f.label :name, class: "labelclass" %></td>
-    <td><%= f.text_field :name, required: true, autofocus: true %></td></tr>
+    <td style="width:35%;"><%= f.label :name, class: "labelclass" %></td>
+    <td ><%= f.text_field :name, required: true, autofocus: true %></td></tr>
     <tr><td><%= f.label :email, class: "labelclass" %></td>
     <td><%= f.email_field :email, required: true %></td>
     </tr>
@@ -18,13 +33,10 @@
     <% end %>
     <tr>
     <td><%= f.label :password, class: "labelclass" %></td>
-    <td><%= f.password_field :password, autocomplete: "off", required: false %></td>
+    <td><%= f.password_field :password, autocomplete: "off", required: false, placeholder: "Leave it blank if you don't want to change it" %></td>
     </tr>
     <tr>
     <td></td>
-    <td>
-    <p>Leave it blank if you don't want to change it</p>
-    </td>
     </tr>
     <tr>
     <td><%= f.label :password_confirmation, class: "labelclass" %></td>
@@ -32,25 +44,22 @@
     </tr>
     <tr>
     <td><%= f.label :current_password, class: "labelclass" %></td>
-    <td><%= f.password_field :current_password, required: true %></td>
+    <td><%= f.password_field :current_password, required: true, placeholder: "We need your current password to confirm your changes" %></td>
     </tr>
     <tr>
     <td></td>
-    <td>
-    <p>We need your current password to confirm your changes</p>
-    </td>
+    
     </tr>
     </table>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+    <%= f.button :submit, "Update", class: "btn btn-primary" %>
   </div>
 <% end %>
-
+<br><br>
 <h3>Cancel my account</h3>
 
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
-</div>

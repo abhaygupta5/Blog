@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 	def index
 		#@posts=Post.where(user_id: current_user).order("created_at DESC")
 		@posts = if params[:term] 
-					Post.where('title LIKE :title1 OR body LIKE :body1',{:title1 => "%#{params[:term]}%".downcase, :body1 => "%#{params[:term]}%".downcase}).all.order("updated_at DESC").paginate(:page=> params[:page], :per_page=> 5)
+					Post.where('title LIKE :title1 OR body LIKE :body1',{:title1 => "%#{params[:term]}%", :body1 => "%#{params[:term]}%"}).all.order("updated_at DESC").paginate(:page=> params[:page], :per_page=> 5)
 				else
 					Post.all.order("updated_at DESC").paginate(:page=> params[:page], :per_page=> 5)
 				end

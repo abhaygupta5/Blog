@@ -45,6 +45,21 @@
 		<%= image_tag(@post.image.url(:medium), class: "img-fluid") %>
 	<% end %>
 	</p>
+	<table>
+		<tr>
+			<td align="center">
+	<div class="fb-share-button" 
+        data-href=request.original_url 
+        data-layout="button">
+    </div>
+</td>
+<td style="padding-top: 20px;">
+    <div style="margin-left: 10px;">
+    	<%= link_to "Tweet", "https://twitter.com/intent/tweet?text= #{@post.title} ", class: "twitter-share-button" %>
+    </div>
+   </td>
+  </tr>
+</table>
 	<hr style="margin-bottom: 5%;">
 	<div id="comments">
 		<h2><%= @post.comments.count %> Comments</h2>

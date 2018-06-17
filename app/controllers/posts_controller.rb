@@ -87,7 +87,7 @@ class PostsController < ApplicationController
 	
 
 	def other
-		@posts= Post.where(category: "other").all.order("updated_at DESC").paginate(:page=> params[:page], :per_page=> 5)		
+		@posts= Post.where(category: "Other").all.order("updated_at DESC").paginate(:page=> params[:page], :per_page=> 5)		
 	end
 
 	def myposts

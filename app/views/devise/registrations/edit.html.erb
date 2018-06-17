@@ -23,9 +23,9 @@
     <table style="width:100%">
     <tr>
     <td style="width:35%;"><%= f.label :name, class: "labelclass" %></td>
-    <td ><%= f.text_field :name, required: true, autofocus: true %></td></tr>
+    <td ><%= f.text_field :name, required: true %></td></tr>
     <tr><td><%= f.label :email, class: "labelclass" %></td>
-    <td><%= f.email_field :email, required: true %></td>
+    <td><%= f.email_field :email, required: true, autofocus: true %></td>
     </tr>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

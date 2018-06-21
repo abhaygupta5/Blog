@@ -5,7 +5,7 @@
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
               <h1><%= @post.title %></h1>
-              <h2 class="subheading"><%= @post.body.slice(0..50) %></h2>
+              <h2 class="subheading"><%= sanitize(@post.body.slice(0..50), :tags=>[]) %></h2>
               <span class="meta">Posted by
                 <%= @post.user.name %>
                 on <%= @post.created_at.strftime("%B, %d %Y") %></span>
@@ -37,13 +37,14 @@
 	</p>
 
 	<h3 id="body">
-		<%= simple_format(@post.body) %>
+		<%= raw(@post.body) %>
 	</h3>
 
 	<p class="image">
 	<% if !@post.image_file_name.blank? %>
 		<%= image_tag(@post.image.url(:medium), class: "img-fluid") %>
 	<% end %>
+	
 	</p>
 	<table>
 		<tr>

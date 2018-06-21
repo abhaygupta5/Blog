@@ -5,12 +5,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>    
   </head>
 
   <body>
-    <div id="fb-root"></div>
+    <div id="fb-root" data-turbolinks-permanent ></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -140,6 +140,22 @@
         </div>
       </div>
     </footer>
+<!--   
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBstN9IP7KoXpOsXFQ6HHpaNhR8-HWqXCE",
+    authDomain: "yourboard-1999.firebaseapp.com",
+    databaseURL: "https://yourboard-1999.firebaseio.com",
+    projectId: "yourboard-1999",
+    storageBucket: "yourboard-1999.appspot.com",
+    messagingSenderId: "864102624732"
+  };
+  firebase.initializeApp(config);
+</script>
+-->
+
   <!-- Bootstrap core JavaScript -->
     
     <%= javascript_include_tag "jquery.min" %>

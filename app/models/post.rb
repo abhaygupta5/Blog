@@ -7,7 +7,9 @@ class Post < ApplicationRecord
 	belongs_to :user
 	has_many :reports
 
-	has_attached_file :image, styles: { medium: "50% x 50%>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+	has_attached_file :image, styles: { medium: "50% x 50%>", thumb: "100x100>" }, default_url: "/images/:style/missing.png", validate_media_type: false
   	validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+
+  	
 
 end

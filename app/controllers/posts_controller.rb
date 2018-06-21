@@ -36,7 +36,7 @@ class PostsController < ApplicationController
 			else
 				render 'edit'
 			end
-
+		
 		else
 			if @post.update(post_params)
 				redirect_to @post

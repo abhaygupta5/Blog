@@ -36,6 +36,7 @@ gem 'jquery-rails'
 gem 'will_paginate'
 gem 'firebase', '~> 0.2.8'
 gem 'ckeditor'
+gem 'friendly_id', '~> 5.2', '>= 5.2.4'
 
 
 # Use Redis adapter to run Action Cable in production

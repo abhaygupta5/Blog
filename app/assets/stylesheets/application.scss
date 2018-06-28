@@ -143,12 +143,40 @@ a {
 	color: white;
 }
 
+#profile{
+	width: 200px;
+	height:200px;
+	position:absolute;
+	top:30%;
+	left:-14%;
+	border: 5px double black;
+}
+
+#alert-notice{
+	z-index: 5;
+	position: absolute;
+	top: 70%;
+	color: white;
+	font-size: 30px;
+	font-weight: bold;
+	background: transparent;
+}
+
 @media only screen and (max-width: 768px){
 	#search-div{
 	width: 50%;
 	
 	
 }
+#profile{
+	width: 150px;
+	height:150px;
+	position:absolute;
+	top:60%;
+	left:7%;
+	border: 5px double black;
+}
+
 }
 
 

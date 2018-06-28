@@ -1,4 +1,4 @@
-<header class="masthead" style="background: url(<%= image_path('home.png') %>)">
+<header class="masthead" <% if !current_user.timeline.blank? %> style="background: url(<%= current_user.timeline.url %>) no-repeat;background-size: 100% " <% else %> style="background: url(<%= image_path('home.png') %>) no-repeat;background-size: 100% " <% end %>>
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
@@ -7,6 +7,9 @@
               <h1>My Posts</h1>
               <span class="subheading">Your created posts</span>
             </div>
+            <div id="profile">
+            <img <% if !current_user.timeline.blank? %> src=<%= current_user.avatar.url(:thumb) %> <% else %> src=<%= image_path('default-missing.jpg') %> <% end %> style="width:100%;height:100%">
+          </div> 
           </div>
         </div>
       </div>
@@ -14,6 +17,8 @@
 <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
+
+ 
 
 <% @posts.each do |post| %>
 	<div class="post-preview">

@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Your Board</title>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-7671991174892133",
+      enable_page_level_ads: true
+      });
+    </script>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -97,8 +107,10 @@
     
 
     <!-- Main Content -->
-    
-          
+        
+           <div id ="alert-notice" ><%= notice %></div>
+           
+        
           <%= yield %>
           
         </div>

@@ -101,6 +101,8 @@ GEM
       googleauth
       httpclient (>= 2.5.3)
       json
+    friendly_id (5.2.4)
+      activerecord (>= 4.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     googleauth (0.6.2)
@@ -284,6 +286,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise (~> 4.4, >= 4.4.3)
   firebase (~> 0.2.8)
+  friendly_id (~> 5.2, >= 5.2.4)
   haml (~> 5.0, >= 5.0.4)
   jbuilder (~> 2.5)
   jquery-rails

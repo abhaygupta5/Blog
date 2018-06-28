@@ -27,6 +27,12 @@
     <tr><td><%= f.label :email, class: "labelclass" %></td>
     <td><%= f.email_field :email, required: true, autofocus: true %></td>
     </tr>
+    <tr>
+    <td><%= f.label :avatar,"Profile Pic", class: "labelclass" %></td>
+    <td><%= f.file_field :avatar %></td></tr>
+    <tr>
+    <td><%= f.label :timeline,"Timeline Pic", class: "labelclass" %></td>
+    <td><%= f.file_field :timeline %></td></tr>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p >Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>

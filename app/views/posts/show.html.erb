@@ -1,4 +1,4 @@
-<header class="masthead" <% if !@post.image_file_name.blank? %> style="background: url(<%= @post.image.url %>)" <% end %>>
+<header class="masthead" <% if !@post.image_file_name.blank? %> style="background: url(<%= @post.image.url %>) no-repeat;background-size: 100% " <% end %>>
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
@@ -63,12 +63,14 @@
 </table>
 
 	<hr style="margin-bottom: 5%;">
-	<div id="comments">
+	<!--<div id="comments">
 		<h2><%= @post.comments.count %> Comments</h2>
 		<%= render @post.comments %>
 		<% if !current_user.blank? %>
 			<%= render "comments/form" %>
 		<% end %>
 	</div>
+-->
+	<%= render('disqus') %>
 
 	

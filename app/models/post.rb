@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-
+	
 	validates :title, presence: true, length: { minimum: 5 }
 	validates :body, presence: true
 	validates :category, presence: true
@@ -10,6 +10,9 @@ class Post < ApplicationRecord
 	has_attached_file :image, styles: { medium: "50% x 50%>", thumb: "100x100>" }, default_url: "/images/:style/missing.png", validate_media_type: false
   	validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
-  	
+  	def to_param
+  		"#{id}-#{title.parameterize}"
+	end 
+
 
 end
